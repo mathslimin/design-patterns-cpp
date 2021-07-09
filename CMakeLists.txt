@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.6)
 project(design-patterns)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
+if (MSVC)
+    add_compile_options("/W3")
+endif()
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES main.cc)
 add_executable(patterns_run ${SOURCE_FILES})
 
